@@ -10,9 +10,9 @@ function Footer() {
     
   <>
 
-  <div class="text-center p-3">
+  <div className="text-center p-3">
      
-     <a>Cd Projekt RED  © 2022 Copyright</a>
+     <a style={{color: "white"}}>Cd Projekt RED  © 2022 Copyright</a>
    </div>
     
   </>
