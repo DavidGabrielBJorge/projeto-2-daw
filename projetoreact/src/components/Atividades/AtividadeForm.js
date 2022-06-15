@@ -1,12 +1,22 @@
 import React from 'react'
 
 export default function AtividadeForm(props){
+
+  const inputTextHandler = (e) =>{
+    const {name,value} = e.target;
+    console.log(value);
+  }
     return(
         <form className="row g-3">
         <div className="col-md-6">
             <label className="form-label">ID</label>
-            <input id="id" className="form-control" type="text" placeholder='ID' 
-            readOnly
+            <input 
+            name="id"
+            id="id" 
+            onChange={inputTextHandler}
+            className="form-control"
+            type="text" 
+            placeholder='ID' 
             value={
               Math.max.apply(
                 Math, props.atividades.map(item=> item.id)
