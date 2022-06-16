@@ -6,14 +6,19 @@ let initialState = [
   {
     id:1,
     prioridade: "1",
-    titulo:"TESTE",
-    descricao:"Teste 1"
+    nome:"TESTE",
+    cpf:"12345678911",
+    endereco:"Teste 1",
+    telefone:"111111111111",
+    valor:"150000"
   },
   {
     id:2,
     prioridade: "1",
-    titulo:"TESTE",
-    descricao:"Teste 2"
+    nome:"TESTE",
+    endereco:"Teste 2",
+    telefone:"222222222",
+    valor:"350000"
   }
 ]
 
@@ -42,7 +47,7 @@ function App() {
         )+1 ,
       prioridade:  document.getElementById('prioridade').value,
       titulo:  document.getElementById('titulo').value,
-      descricao: document.getElementById('descricao').value
+      endereco: document.getElementById('endereco').value
     };
 
 

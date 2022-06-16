@@ -3,9 +3,12 @@ import AtividadeLista from './AtividadeLista';
 
 const atividadeInicial={
   id:0,
-  titulo:"",
+  nome:"",
+  cpf:"",
   prioridade:0,
-  descricao:""
+  endereco:"",
+  telefone:"",
+  valor:""
 }
 
 export default function AtividadeForm(props){
@@ -58,18 +61,61 @@ export default function AtividadeForm(props){
         <h1>Atividade {atividade.id !==0 ? atividade.id : ''}</h1>
         <form className="row g-3" onSubmit={handleSubmit}>
         
+{/*============================= Inputs dos dados =============================*/}
         <div className="col-md-6">
             <label className="form-label">
-              Título
+              Nome
               </label>
             <input 
-             name="titulo"
-             value={atividade.titulo}
+             name="nome"
+             value={atividade.nome}
              onChange={inputTextHandler}
-             id="titulo"
+             id="nome"
              className="form-control" 
              type="text" 
-             placeholder='Título'></input>
+             placeholder='Fulano Ciclano'></input>
+          </div>
+
+          <div className="col-md-6">
+            <label className="form-label">
+              CPF
+              </label>
+            <input 
+             name="cpf"
+             value={atividade.cpf}
+             onChange={inputTextHandler}
+             id="cpf"
+             className="form-control" 
+             type="text" 
+             placeholder='12345678911'></input>
+          </div>
+
+          <div className="col-md-6">
+            <label className="form-label">
+            Telefone  
+            </label>
+            <input 
+             name="telefone"
+             value={atividade.telefone}
+             onChange={inputTextHandler}
+             id="telefone"
+             className="form-control" 
+             type="text" 
+             placeholder='Fulano Ciclano'></input>
+          </div>
+
+          <div className="col-md-6">
+            <label className="form-label">
+            Valor  
+            </label>
+            <input 
+             name="valor"
+             value={atividade.valor}
+             onChange={inputTextHandler}
+             id="valor"
+             className="form-control" 
+             type="text" 
+             placeholder='200000,00'></input>
           </div>
 
           <div className="col-md-6">
@@ -90,16 +136,16 @@ export default function AtividadeForm(props){
     
           <div className="col-md-12">
             <label className="form-label">
-              Descrição
+              Endereço
               </label>
             <textarea
-             name="descricao"
-             value={atividade.descricao}
+             name="endereco"
+             value={atividade.endereco}
              onChange={inputTextHandler}
-             id="descricao"
+             id="endereco"
              className="form-control" 
              type="text" 
-             placeholder='Descrição'></textarea>
+             placeholder='St. Juliet, Center, 302'></textarea>
           </div>
           
           <hr/>

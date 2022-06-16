@@ -37,7 +37,7 @@ export default function Atividade(props){
             <span className="badge bg-secondary me-1">
               {props.ativ.id}
             </span>
-            - {props.ativ.titulo}
+            - {props.ativ.nome}
             </h5>
             <h6>
                 
@@ -52,8 +52,25 @@ export default function Atividade(props){
           
 
           <p className="card-text-teste">
-          {props.ativ.descricao}
+          {"Endereço: "+props.ativ.endereco}
+          
           </p>
+          <p className="card-text-teste">
+          {"Nome: "+props.ativ.nome}
+          </p>
+          <p className="card-text-teste">
+          {"CPF: "+props.ativ.cpf}
+          </p>
+
+          <p className="card-text-teste">
+          {"Telefone: "+props.ativ.telefone}
+          </p>
+
+          <p className="card-text-teste">
+          {"Valor: "+props.ativ.valor}
+          </p>
+
+
           <div className="d-flex.justify-content-end pt-2 m-0 border-top">
            <button className="btn btn-sm btn-outline-primary me-2 "
            onClick={()=>props.pegarAtividade(props.ativ.id)}>
