@@ -2,24 +2,18 @@ import { useState,useEffect } from 'react';
 import './App.css';
 import AtividadeForm from './components/Atividades/AtividadeForm.js';
 import AtividadeLista from './components/Atividades/AtividadeLista.js';
+import axios from "axios";
 let initialState = [
   {
-    id:1,
+    id:0,
     prioridade: "1",
     nome:"TESTE",
     cpf:"12345678911",
     endereco:"Teste 1",
     telefone:"111111111111",
     valor:"150000"
-  },
-  {
-    id:2,
-    prioridade: "1",
-    nome:"TESTE",
-    endereco:"Teste 2",
-    telefone:"222222222",
-    valor:"350000"
   }
+ 
 ]
 
 function App() {
@@ -27,7 +21,15 @@ function App() {
   const [index, setIndex]=useState(0);
   const [atividades, setAtividades] = useState(initialState)
   const [atividade, setAtividade] = useState({id:0})
+  const [id, setId]=useState("");
+  const [idAlterar, setIdAlterar]=useState("");
+  const [NomeAlterar, setNomeAlterar]=useState("");
+  const [cpfAlterar, setCpfAlterar]=useState("");
+  const [telefoneAlterar, setTelefoneAlterar]=useState("");
+  const [valorAlterar, setValorAlterar]=useState("");
+  const [enderecoAlterar, setEnderecoAlterar]=useState("");
 
+  
   useEffect(() => {
     atividades.length <= 0
         ? setIndex(1)
@@ -74,6 +76,29 @@ function App() {
   }
 
   function atualizarAtividade(ativ){
+    console.log(ativ);
+
+    console.log(ativ.id);
+    console.log(ativ.nome);
+    console.log(ativ.cpf);
+    console.log(ativ.telefone);
+    console.log(ativ.valor);
+    console.log(ativ.endereco);
+
+    axios({
+      method: "PUT",
+      data:{
+        id: ativ.id,
+        Nome: ativ.nome,
+        cpf: ativ.cpf,
+        telefone: ativ.telefone,
+        valor: ativ.valor,
+        endereco: ativ.endereco
+      },
+      withCredentials:true,
+      url: "http://localhost:3002/imovel"
+    }).then((res)=> console.log(res));
+
     setAtividades(atividades.map(item => 
       item.id === ativ.id ? ativ :item
       ));
@@ -81,6 +106,16 @@ function App() {
   }
 
   function deletarAtividade(id){
+    console.log("Entrou no criar");
+    axios({
+      method: "DELETE",
+      data:{
+        id:id
+      },
+      withCredentials:true,
+      url: "http://localhost:3002/imovel"
+    }).then((res)=> console.log(res));
+
     const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id);
     setAtividades([...atividadesFiltradas]);
   }

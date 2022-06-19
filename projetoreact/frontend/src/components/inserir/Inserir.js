@@ -2,17 +2,10 @@ import { useState } from 'react';
 import './inserir.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
-import $ from 'jquery';
 
 function Inserir() {
-   
-    
   return (
-
-    
-  <>
-
-        
+  <>      
     {/*    =======================INPUT======================= */}
           <div className="mb-3">
             <label className="form-label">Digite o seu nome:</label>
