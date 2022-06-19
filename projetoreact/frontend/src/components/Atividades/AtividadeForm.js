@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import AtividadeLista from './AtividadeLista';
+import axios from "axios";
 
 const atividadeInicial={
   id:0,
@@ -13,18 +14,43 @@ const atividadeInicial={
 
 export default function AtividadeForm(props){
   const [atividade,setAtividade]=useState(atividadeAtual());
+  const [Nome, setNome]=useState("");
+  const [cpf, setCpf]=useState("");
+  const [telefone, setTelefone]=useState("");
+  const [valor, setValor]=useState("");
+  const [endereco, setEndereco]=useState("");
+
+  const criar = (e) => {
+    console.log("Entrou no criar");
+    axios({
+      method: "POST",
+      data:{
+        Nome: Nome,
+        cpf: cpf,
+        telefone: telefone,
+        valor: valor,
+        endereco: endereco
+      },
+      withCredentials:true,
+      url: "http://localhost:3002/imovel"
+    }).then((res)=> console.log(res));
+
+  }
+
 
   useEffect(()=>{//ao construir um componente o useEffect eh executado apenas uma vez
     if(props.ativSelecionada.id !== 0) setAtividade(props.ativSelecionada);
       
   }, [props.ativSelecionada]);
 
-  const inputTextHandler = (e) =>{
+   const inputTextHandler = (e) =>{
     const {name,value} = e.target;
+    console.log(value);
+    console.log(e.target);
 
     setAtividade({...atividade, [name]:value})
      
-  };
+  }; 
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -69,7 +95,8 @@ export default function AtividadeForm(props){
             <input 
              name="nome"
              value={atividade.nome}
-             onChange={inputTextHandler}
+             /* onChange={inputTextHandler} */
+              onChange={e => {inputTextHandler(e); setNome(e.target.value)}} 
              id="nome"
              className="form-control" 
              type="text" 
@@ -83,7 +110,8 @@ export default function AtividadeForm(props){
             <input 
              name="cpf"
              value={atividade.cpf}
-             onChange={inputTextHandler}
+             onChange={e => {inputTextHandler(e); setCpf(e.target.value)}} 
+             /* onChange={e => {inputTextHandler(); setCpf(e.target.value)}} */
              id="cpf"
              className="form-control" 
              type="text" 
@@ -97,11 +125,12 @@ export default function AtividadeForm(props){
             <input 
              name="telefone"
              value={atividade.telefone}
-             onChange={inputTextHandler}
+             onChange={e => {inputTextHandler(e); setTelefone(e.target.value)}} 
+             /* onChange={e => {inputTextHandler(); setTelefone(e.target.value)}} */
              id="telefone"
              className="form-control" 
              type="text" 
-             placeholder='Fulano Ciclano'></input>
+             placeholder='99912345678'></input>
           </div>
 
           <div className="col-md-6">
@@ -111,7 +140,8 @@ export default function AtividadeForm(props){
             <input 
              name="valor"
              value={atividade.valor}
-             onChange={inputTextHandler}
+             onChange={e => {inputTextHandler(e); setValor(e.target.value)}} 
+            /*  onChange={e => {inputTextHandler(); setValor(e.target.value)}} */
              id="valor"
              className="form-control" 
              type="text" 
@@ -141,7 +171,8 @@ export default function AtividadeForm(props){
             <textarea
              name="endereco"
              value={atividade.endereco}
-             onChange={inputTextHandler}
+             onChange={e => {inputTextHandler(e); setEndereco(e.target.value)}} 
+             /* onChange={e => {inputTextHandler(); setEndereco(e.target.value)}} */
              id="endereco"
              className="form-control" 
              type="text" 
@@ -156,6 +187,7 @@ export default function AtividadeForm(props){
           <button 
           className="btn btn-outline-secondary "
           type="submit"
+           onClick={criar} 
         >
           <i className="fas fa-plus me-2"></i>
           Atividade

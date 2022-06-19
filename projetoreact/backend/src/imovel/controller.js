@@ -58,8 +58,8 @@ exports.create = async (req, res) => {
 
     console.log("req.body.valor: "+req.body.valor);
 
-    if(String(req.body.valor).match(espacoBranco) && req.body.endereco.match(espacoBranco) && req.body.Nome.match(espacoBranco) && req.body.telefone.match(espacoBranco) && req.body.cpf.match(espacoBranco) && req.body.telefone.match(numeroTelefone) && req.body.Nome.match(nome) &&  req.body.cpf.match(numeroCpf) && String(req.body.valor).match(validarValor))
-    {
+   /*  if(String(req.body.valor).match(espacoBranco) && req.body.endereco.match(espacoBranco) && req.body.Nome.match(espacoBranco) && req.body.telefone.match(espacoBranco) && req.body.cpf.match(espacoBranco) && req.body.telefone.match(numeroTelefone) && req.body.Nome.match(nome) &&  req.body.cpf.match(numeroCpf) && String(req.body.valor).match(validarValor))
+    { */
         try{
             //vai criar primeiro o proprietário para depois criar o imóvel
             let proprietario = await ProprietarioController.createDefault(req.body.Nome, req.body.cpf, req.body.telefone);
@@ -96,12 +96,12 @@ exports.create = async (req, res) => {
                 console.log(err);
               
             }
-    }
+   /*  }
     else{
         res.status(httpStatus.UNAUTHORIZED);
         res.send({'mensagem' : 'Erro em um dos campos, deve conter apenas palavras no nome, o CPF deve ter no mínimo 11 números e o número de telefone deve ser no formato: +XX XXXX-XXXX, TODOS OS CAMPOS DEVEM SER PREENCHIDOS'});
 
-    }
+    } */
 }
 
 
