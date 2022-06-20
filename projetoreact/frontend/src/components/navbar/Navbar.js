@@ -14,6 +14,8 @@ function Navbar() {
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
         <a className="nav-link active" aria-current="page" href={'https://www.google.com/'}>Login</a>
+        <a className="nav-link active" aria-current="page" href={'http://localhost:3002'}>Sistema</a>
+        
         
         
        

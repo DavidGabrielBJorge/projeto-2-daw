@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 
-import App from './App';
 import Introducao from './components/introducao/Introducao.js';
 import Sobre from './components/sobre/Sobre.js';
 import Footer from './components/footer/Footer.js';
@@ -19,7 +18,6 @@ root.render(
   <>
   <Navbar></Navbar>
    <div className="container">
-  <App />
   <Introducao></Introducao>
   <Sobre></Sobre>
 {/*   <Inserir></Inserir> */}
