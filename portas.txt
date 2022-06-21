@@ -1,0 +1,14 @@
+projetoreact - frontend:3000
+projetoreact - backend:3001
+
+sistema - backend:3002
+sistema - frontend:3003
+
+Passport(html e css)- 3004 
+
+Passport(react) - backend: 3005
+Passport(react) - backend: 3006
+
+projeto1 - 4000
+projeto1passport-4001
+

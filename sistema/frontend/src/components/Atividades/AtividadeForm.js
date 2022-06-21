@@ -32,7 +32,7 @@ export default function AtividadeForm(props){
         endereco: endereco
       },
       withCredentials:true,
-      url: "http://localhost:4000/imovel"
+      url: "http://localhost:3002/imovel"
     }).then((res)=> console.log(res));
 
   }

@@ -96,7 +96,7 @@ function App() {
         endereco: ativ.endereco
       },
       withCredentials:true,
-      url: "http://localhost:4000/imovel"
+      url: "http://localhost:3002/imovel"
     }).then((res)=> console.log(res));
 
     setAtividades(atividades.map(item => 
@@ -113,7 +113,7 @@ function App() {
         id:id
       },
       withCredentials:true,
-      url: "http://localhost:4000/imovel"
+      url: "http://localhost:3002/imovel"
     }).then((res)=> console.log(res));
 
     const atividadesFiltradas = atividades.filter(atividade => atividade.id !== id);

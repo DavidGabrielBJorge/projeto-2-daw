@@ -6,7 +6,6 @@ import './index.css';
 import Introducao from './components/introducao/Introducao.js';
 import Sobre from './components/sobre/Sobre.js';
 import Footer from './components/footer/Footer.js';
-import Inserir from './components/inserir/Inserir';
 import Navbar from './components/navbar/Navbar.js';
 
 
@@ -20,7 +19,6 @@ root.render(
    <div className="container">
   <Introducao></Introducao>
   <Sobre></Sobre>
-{/*   <Inserir></Inserir> */}
 
   </div>
   <Footer></Footer>

@@ -13,7 +13,6 @@ function Navbar() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
-        <a className="nav-link active" aria-current="page" href={'https://www.google.com/'}>Login</a>
         <a className="nav-link active" aria-current="page" href={'http://localhost:3000'}>Início</a>
         
        

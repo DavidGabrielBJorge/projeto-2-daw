@@ -8,7 +8,7 @@ const status = require("http-status")
 const httpStatus = require('http-status')
 
 /*
-http://localhost:4000/imovel
+http://localhost:3002/imovel
 =>CRIAR
 {
 	"Nome": "Kerry Eurodyne",

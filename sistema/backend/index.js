@@ -16,7 +16,7 @@ db.sequelize.sync({force: true}).then(()=>{
 })
 
 app.use(cors({
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3003",
     credentials:true,
 }))
 
@@ -46,7 +46,7 @@ app.get("/buscar",(req,res)=>{
     res.sendFile(__dirname+"/public/view/buscar.html")
 })
 
-var server = app.listen(4000, () =>{
+var server = app.listen(3002, () =>{
     console.log("Servidor rodando na porta : "+ server.address.port+" no host : "+ server.address().address)
 })
 
