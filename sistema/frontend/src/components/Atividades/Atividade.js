@@ -67,8 +67,12 @@ export default function Atividade(props){
           </p>
 
           <p className="card-text-teste">
-          {"Valor: "+props.ativ.valor}
+          {"Valor: R$ "+props.ativ.valor}
           </p>
+
+         {/*  <p className="card-text-teste">
+          {"Preço do aluguel: "+props.ativ.preco}
+          </p> */}
 
 
           <div className="d-flex.justify-content-end pt-2 m-0 border-top">

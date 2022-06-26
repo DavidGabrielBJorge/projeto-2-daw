@@ -4,7 +4,7 @@ const Proprietario = require("./model")
 const httpStatus = require('http-status')
 
 /*
-http://localhost:3000/proprietario
+http://localhost:3002/proprietario
 =>CRIAR
 Pessoa 1:
 {

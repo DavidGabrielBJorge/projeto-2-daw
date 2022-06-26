@@ -7,11 +7,11 @@ let initialState = [
   {
     id:0,
     prioridade: "1",
-    nome:"TESTE",
-    cpf:"12345678911",
-    endereco:"Teste 1",
-    telefone:"111111111111",
-    valor:"150000"
+    nome:"Mascus Phenix",
+    cpf:"67545678911",
+    endereco:"Rua do Nascer do Sol - Apartamento 345",
+    telefone:"445578123672",
+    valor:"149999.99"
   }
  
 ]
@@ -40,27 +40,7 @@ function App() {
               ) + 1
           );
 }, [atividades]);
-  /* function addAtividade(e){
-    e.preventDefault();//previne de recarregar a página
-
-    const atividade = {
-      id:  Math.max.apply(
-        Math, atividades.map(item=> item.id)
-        )+1 ,
-      prioridade:  document.getElementById('prioridade').value,
-      titulo:  document.getElementById('titulo').value,
-      endereco: document.getElementById('endereco').value
-    };
-
-
-    ///atividades.push(atividade); 
-   
-   setAtividades([...atividades, { ...atividade}]);//criar a atividade
-    console.log(atividades);
-    //os 3 pontos indica que ao colocar um novo elemento deve criar um novo array copiado dentro do array de atividades
-    //o {} cria um novo objeto ...atividade substitui o comando atividades.push(atividade); para inserir uma nova atividade
-  } */
-
+  
   function addAtividade(ativ){
    
    setAtividades([...atividades,

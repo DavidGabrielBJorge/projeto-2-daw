@@ -9,7 +9,8 @@ const atividadeInicial={
   prioridade:0,
   endereco:"",
   telefone:"",
-  valor:""
+  valor:"",
+  preco:""
 }
 
 export default function AtividadeForm(props){
@@ -19,6 +20,7 @@ export default function AtividadeForm(props){
   const [telefone, setTelefone]=useState("");
   const [valor, setValor]=useState("");
   const [endereco, setEndereco]=useState("");
+ /*  const [preco, setPreco]=useState(""); */
 
   const criar = (e) => {
     console.log("Entrou no criar");
@@ -84,7 +86,7 @@ export default function AtividadeForm(props){
   }
     return(
       <>
-        <h1>Atividade {atividade.id !==0 ? atividade.id : ''}</h1>
+        <h1>Imóvel {atividade.id !==0 ? atividade.id : ''}</h1>
         <form className="row g-3" onSubmit={handleSubmit}>
         
 {/*============================= Inputs dos dados =============================*/}
@@ -162,7 +164,10 @@ export default function AtividadeForm(props){
               <option value="3">Alta</option>
             </select>
           </div>
-    
+
+{/*==========================teste ==========================*/}
+            
+
     
           <div className="col-md-12">
             <label className="form-label">
@@ -190,7 +195,7 @@ export default function AtividadeForm(props){
            onClick={criar} 
         >
           <i className="fas fa-plus me-2"></i>
-          Atividade
+          Imóvel
         </button>  
         :
         <>
