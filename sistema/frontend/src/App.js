@@ -21,7 +21,7 @@ function App() {
   const [index, setIndex]=useState(0);
   const [atividades, setAtividades] = useState(initialState)
   const [atividade, setAtividade] = useState({id:0})
-  const [id, setId]=useState("");
+  const [id, setId]=useState("");//-> altera o estado de uma variável
   const [idAlterar, setIdAlterar]=useState("");
   const [NomeAlterar, setNomeAlterar]=useState("");
   const [cpfAlterar, setCpfAlterar]=useState("");
@@ -43,6 +43,8 @@ function App() {
   
   function addAtividade(ativ){
    
+    //...atividades eh um array que armazena o array de atividades
+    //operator ... funciona de forma similar com o push( adiciona um ou mais elementos ao final de um array e retorna o novo comprimento desse array)
    setAtividades([...atividades,
     { ...ativ, id: index}]);
     console.log(atividades);
